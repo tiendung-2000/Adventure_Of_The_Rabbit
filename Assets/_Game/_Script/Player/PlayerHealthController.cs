@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public static PlayerHealthController Ins;
+    public static PlayerHealthController Ins;//dat instance cho script => co the goi tu bat cu dau
 
     public int currentHealth;
     public int maxHealth;
     public bool isLive;
     public Rigidbody2D rb;
     public float invicible;
-
-    public Material material;
+    public Material material; // Chat lieu cua nguoi choi
 
     private void Awake()
     {
@@ -65,8 +64,8 @@ public class PlayerHealthController : MonoBehaviour
     IEnumerator TakeDamageFX()
     {
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        Material defaultMaterial = spriteRenderer.material;
-        Material flickerMaterial = material;
+        Material defaultMaterial = spriteRenderer.material;//Default material
+        Material flickerMaterial = material;//materual mau do
         float flickerDuration = 0.5f;
         int flickerCount = 3;
 
